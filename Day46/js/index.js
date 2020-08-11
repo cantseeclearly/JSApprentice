@@ -1,3 +1,6 @@
+const hexSchoolUrl = 'https://www.hexschool.com/';
+let googleBtn;
+let yahooBtn;
 let param;
 let setSingleParamUrl = () => {};
 let setMultiParamUrl = () => {};
@@ -5,6 +8,18 @@ let getParam = () => {};
 
 window.onload = () => 
 {
+    googleBtn = document.querySelector('.google');
+    let googleId = googleBtn.getAttribute('data-id');
+    googleBtn.addEventListener('click', () => {
+        location.href = `${hexSchoolUrl}?recommend=${googleId}`;
+    });
+
+    yahooBtn = document.querySelector('.yahoo');
+    let yahooId = yahooBtn.getAttribute('data-id');
+    yahooBtn.addEventListener('click', ()=> {
+        location.href = `${hexSchoolUrl}?recommend=${yahooId}`;
+    });
+    
     setSingleParamUrl = () => {
         location.href = location.pathname + '?recommend=userName';
     }
