@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../Day46/js/index.js"></script>
+</head>
+<body>
+    <h3>Q1. 以下有兩顆按鈕，是部落格推薦連結，請抓取 `data-id` 的值後進行轉址</h3>
+    <ul>
+        <li>點擊 Tom 時，網址為 `https://www.hexschool.com/?recommend=tom`</li>
+        <li>點擊 John 時，網址為 `https://www.hexschool.com/?recommend=John`</li>
+    </ul>
+    <button class="google" data-id="tom">Tom 推薦六角學院</button>
+    <button class="yahoo" data-id="John">John 推薦六角學院</button>
+    <hr>
+    <h3>Q2. 如果網址規則是`https://www.hexschool.com/?recommend="值"`，該如何取出 recommend 的值？</h3>
+    <button onclick=setSingleParamUrl()>設定單一網址參數</button>
+    <button onclick=setMultiParamUrl()>設定多個網址參數</button>
+    <button onclick=getParam()>取得網址參數</button>
+    <ul class="param"></ul>
+</body>
+</html>
