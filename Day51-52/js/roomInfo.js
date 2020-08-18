@@ -32,7 +32,7 @@ axios.get(`${url}${id}`)
 }
 
 function goHome() {
-    let path = location.pathname.replace('roomInfo', 'index');
+    let path = location.pathname.replace('view/roomInfo', 'index');
     location.href = path;
 }
 

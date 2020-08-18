@@ -43,6 +43,6 @@ axios.get(url)
     });
 
 select.addEventListener('change', (e) => {
-    let path = location.pathname.replace('index', 'roomInfo');
+    let path = location.pathname.replace('index', 'view/roomInfo');
     location.href = `${path}?id=${e.target.value}`;
 });
