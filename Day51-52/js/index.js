@@ -26,7 +26,7 @@ axios.get(url)
                     <div class="card h-100 my-4 mx-3" style="width: 18rem;">
                       <div class="bg-cover" style="background-image:url('${i.imageUrl}')"></div>
                       <div class="card-body">
-                        <h5 class="card-title")>${i.name}</h5>
+                        <h5 class="card-title">${i.name}</h5>
                         <button class="btn btn-danger" onclick=goDetail('${i.id}')>detail</button>
                       </div>
                     </div>

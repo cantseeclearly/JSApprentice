@@ -19,12 +19,12 @@ axios.get(`${url}${id}`)
             console.log(room);
             room.forEach(i => {
                 str += `
-                    <div class="card h-100 my-4 mx-3" style="width: 18rem;">
+                    <div class="card h-100 my-4 mx-3" style="width: 30rem;">
                     <button class="btn btn-primary" id='toIndex' onclick=goHome()>Go Index Page</button>
                       <div class="card-body">
                         <h5 class="card-title">${i.name}</h5>
                         <h6 class="card-text">${i.description}</h6>
-                        <table class='table table-striped'>
+                        <table class='table table-striped .table-responsive'>
                             <thead>    
                                 <tr>
                                     <th>房型資訊</th>
