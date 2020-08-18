@@ -6,6 +6,9 @@ let ul = document.querySelector('#roomInfo');
 let id = location.search.split('=')[1];
 
 window.onload = function() {
+let header = {
+    
+}
 axios.get(`${url}${id}`)
     .then(res => {
         console.log(res);
@@ -13,15 +16,48 @@ axios.get(`${url}${id}`)
         {
             room = res.data.room;
             let str = '';
+            console.log(room);
             room.forEach(i => {
                 str += `
-                    <li class='li'>
-                        <div>id:${i.id}</div>\n
-                        <div>name:${i.name}</div>\n
-                        <div>holidayPrice:${i.holidayPrice}</div>\n
-                        <div>normalDayPrice:${i.normalDayPrice}</div>\n
-                        <div><img src='${i.imageUrl}' alt='${i.name}' width=300 height=300 /></div>\n
-                    </li>`;
+                    <div class="card h-100 my-4 mx-3" style="width: 18rem;">
+                    <button class="btn btn-primary" id='toIndex' onclick=goHome()>Go Index Page</button>
+                      <div class="card-body">
+                        <h5 class="card-title">${i.name}</h5>
+                        <h6 class="card-text">${i.description}</h6>
+                        <table class='table table-striped'>
+                            <thead>    
+                                <tr>
+                                    <th>房型資訊</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th>入房時間</th>
+                                    <td>${i.checkInAndOut['checkInEarly']}~${i.checkInAndOut['checkInLate']}</td>
+                                </tr>
+                                <tr>
+                                    <th>退房時間</th>
+                                    <td>${i.checkInAndOut['checkOut']}</td>
+                                </tr>
+                                <tr>
+                                    <th>平日價格</th>
+                                    <td>${i.normalDayPrice}</td>
+                                </tr>
+                                <tr>
+                                    <th>假日價格</th>
+                                    <td>${i.holidayPrice}</td>
+                                </tr>
+                                <tr>
+                                    <td colspan=2>
+                                        <img class='img-thumbnail' src='${i.imageUrl[0]}' />
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                      </div>
+                    </div>
+                    `;
             });
             ul.innerHTML = str;
         }
